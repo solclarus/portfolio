@@ -4,7 +4,7 @@ import { Link } from "@/i18n/routing";
 export const BlogItem = ({ slug, title }: { slug: string; title: string }) => {
   return (
     <div className="hover:shadow-lg transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card hover:bg-card/10">
-      <h2 className="text-md font-semibold truncate">
+      <h2 className="text-lg font-bold truncate">
         <Link href={`/blog/${slug}`} target="_blank">
           {title}
           <span className="absolute inset-0"></span>

@@ -3,8 +3,8 @@ import { Separator } from "@/components/ui/separator";
 
 const Page = () => {
   return (
-    <main className="max-w-[600px] p-6 mx-auto">
-      <h2 className="font-bold text-xl pb-4">Title</h2>
+    <main className="max-w-[600px] px-6 py-10 mx-auto">
+      <h2 className="font-bold text-3xl pb-4">Title</h2>
       <div className="flex pb-2">
         <h3 className="text-sm text-muted-foreground">July 01, 2024</h3>
         <span className="flex-1"></span>
