@@ -15,7 +15,7 @@ export const portfolios: Portfolio[] = [
   },
   {
     id: "cinemento",
-    href: "https://x.com",
+    href: "https://cinemento.vercel.app",
     title: "Cinemento",
     description: "Cinemento is a movie log",
   },
