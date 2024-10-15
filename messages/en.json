@@ -1,0 +1,32 @@
+{
+  "HomePage": {
+    "title": "Hello world!",
+    "about": "Go to the about page"
+  },
+  "home": {
+    "profile": {
+      "name": "Yosuke OSAKO",
+      "occupation": "Software Developer"
+    },
+    "experience": {
+      "born": {
+        "title": "Born in Kobe, Japan",
+        "date": "December 2000",
+        "content": "I was born and raised in Kobe City, Hyogo Prefecture, Japan."
+      },
+      "highSchool": {
+        "title": "Graduated from Nagata High School",
+        "date": "March 2019",
+        "content": "I was graduated from Nagata high school in Hyogo."
+      },
+      "university": {
+        "title": "University student",
+        "date": "Present",
+        "content": "I am an Kwansei Gakuin University student from April 2020."
+      }
+    }
+  },
+  "top": {
+    "greeting": "Hello, world!"
+  }
+}

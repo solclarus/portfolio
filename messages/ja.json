@@ -1,0 +1,32 @@
+{
+  "HomePage": {
+    "title": "こんにちは、世界！",
+    "about": "詳細ページへ"
+  },
+  "home": {
+    "profile": {
+      "name": "大迫陽亮",
+      "occupation": "ソフトウェアデベロッパー"
+    },
+    "experience": {
+      "born": {
+        "title": "兵庫県神戸市に生まれる",
+        "date": "2000年 12月",
+        "content": ""
+      },
+      "highSchool": {
+        "title": "兵庫県立長田高等学校 卒業",
+        "date": "2019年 3月",
+        "content": ""
+      },
+      "university": {
+        "title": "関西学院大学経済学部 在学",
+        "date": "現在",
+        "content": ""
+      }
+    }
+  },
+  "top": {
+    "greeting": "こんにちは、世界！"
+  }
+}
