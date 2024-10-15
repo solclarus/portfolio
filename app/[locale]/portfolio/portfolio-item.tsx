@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Portfolio } from "@/src/types/portfolio";
+import { Portfolio } from "@/types/portfolio";
 import Image from "next/image";
 
 type PortfolioPageProps = {
