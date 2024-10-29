@@ -1,16 +1,14 @@
 import { getArticles } from "@/lib/newt";
-import { BlogItem } from "./blog-item";
+import { ArticleItem } from "./article-item";
 
-const BlogPage = async () => {
+export default async function Page() {
   const articles = await getArticles();
 
   return (
     <main className="max-w-[600px] p-6 mx-auto space-y-4">
       {articles.map((article) => {
-        return <BlogItem key={article._id} article={article} />;
+        return <ArticleItem key={article._id} article={article} />;
       })}
     </main>
   );
-};
-
-export default BlogPage;
+}

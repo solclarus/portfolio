@@ -3,11 +3,11 @@ import { Link } from "@/i18n/routing";
 import { Article } from "@/types/article";
 import { format } from "date-fns";
 
-export const BlogItem = ({ article }: { article: Article }) => {
+export const ArticleItem = ({ article }: { article: Article }) => {
   return (
     <div className="hover:shadow-lg transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card hover:bg-card/10">
       <h2 className="text-lg font-bold truncate">
-        <Link href={`/blog/${article.slug}`} target="_blank">
+        <Link href={`/article/${article.slug}`}>
           {article.title}
           <span className="absolute inset-0"></span>
         </Link>
