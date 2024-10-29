@@ -1,38 +1,54 @@
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
+import { getArticles, getArticleBySlug } from "@/lib/newt";
+import type { Metadata } from "next";
+import type { Article } from "@/types/article";
+import { format } from "date-fns";
 
-const Page = () => {
-  return (
-    <main className="max-w-[600px] px-6 py-10 mx-auto">
-      <h2 className="font-bold text-3xl pb-4">Title</h2>
-      <div className="flex pb-2">
-        <h3 className="text-sm text-muted-foreground">July 01, 2024</h3>
-        <span className="flex-1"></span>
-        <h3 className="text-sm text-muted-foreground">7 min read</h3>
-      </div>
-
-      <div className="space-x-2">
-        <Badge>Next.js</Badge>
-        <Badge>Tailwind CSS</Badge>
-        <Badge>Hobby</Badge>
-        <Badge>Badge</Badge>
-      </div>
-      <Separator className="my-6" />
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, natus
-        mollitia fuga earum suscipit nisi exercitationem voluptas harum
-        voluptate temporibus dicta at reiciendis accusamus ullam doloremque
-        sapiente aperiam, dolore voluptatem ut, officia sint incidunt ad! Odio
-        harum voluptatum possimus nihil reprehenderit pariatur rerum ab quo
-        recusandae officiis porro soluta blanditiis temporibus earum non ullam
-        molestias repellat, odit ea ipsa modi dicta saepe atque. Culpa,
-        voluptatum quo? Soluta ratione optio magni ex ut velit atque accusamus
-        repellendus iure molestiae hic laboriosam dignissimos quas, quod,
-        numquam illo vitae aut adipisci voluptas. Iusto molestias, quis placeat
-        dolores corrupti delectus maxime rerum impedit illum?
-      </p>
-    </main>
-  );
+type Props = {
+  params: {
+    slug: string;
+  };
 };
 
-export default Page;
+export async function generateStaticParams() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+export const dynamicParams = false;
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = params;
+  const article = await getArticleBySlug(slug);
+
+  return {
+    title: article?.title,
+    description: "投稿詳細ページです",
+  };
+}
+
+export default async function Article({ params }: Props) {
+  const { slug } = params;
+  const article = await getArticleBySlug(slug);
+  if (!article) return;
+
+  return (
+    <main className="max-w-[600px] px-6 py-10 mx-auto prose">
+      <h2 className="font-bold text-3xl pb-4">{article.title}</h2>
+      <div className="flex pb-2">
+        <h3 className="text-sm text-muted-foreground">
+          {format(article._sys.createdAt, "yyyy/MM/dd")}
+        </h3>
+      </div>
+      <div className="space-x-2">
+        {article.tags.map((tag) => {
+          return <Badge key={tag.slug}>{tag.name}</Badge>;
+        })}
+      </div>
+      <Separator className="my-6" />
+      <div dangerouslySetInnerHTML={{ __html: article.body }} />
+    </main>
+  );
+}

@@ -1,29 +1,24 @@
 import { Badge } from "@/components/ui/badge";
 import { Link } from "@/i18n/routing";
+import { Article } from "@/types/article";
+import { format } from "date-fns";
 
-export const BlogItem = ({ slug, title }: { slug: string; title: string }) => {
+export const BlogItem = ({ article }: { article: Article }) => {
   return (
     <div className="hover:shadow-lg transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card hover:bg-card/10">
       <h2 className="text-lg font-bold truncate">
-        <Link href={`/blog/${slug}`} target="_blank">
-          {title}
+        <Link href={`/blog/${article.slug}`} target="_blank">
+          {article.title}
           <span className="absolute inset-0"></span>
         </Link>
       </h2>
-      <div className="flex">
-        <h3 className="text-sm text-muted-foreground">2024-07-01</h3>
-        <span className="flex-1"></span>
-        <h3 className="text-sm text-muted-foreground">7 min read</h3>
-      </div>
-      <p className="py-2 text-ellipsis line-clamp-3">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi
-        consect
-      </p>
+      <time className="text-sm text-muted-foreground">
+        {format(new Date(article._sys.createdAt), "yyyy年MM月dd日")}
+      </time>
       <div className="space-x-1">
-        <Badge>Next.js</Badge>
-        <Badge>Tailwind CSS</Badge>
-        <Badge>Hobby</Badge>
-        <Badge>Badge</Badge>
+        {article.tags.map((tag) => {
+          return <Badge key={tag._id}>{tag.name}</Badge>;
+        })}
       </div>
     </div>
   );
