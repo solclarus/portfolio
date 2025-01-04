@@ -25,7 +25,7 @@ export default async function LocaleLayout({
         >
           <NextIntlClientProvider messages={messages}>
             <div className="min-h-dvh bg-muted/30">
-              {children}
+              <main className="mx-auto max-w-2xl mt-10 px-4">{children}</main>
               <IslandMenu />
               <Footer />
             </div>

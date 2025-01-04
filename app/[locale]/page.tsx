@@ -5,11 +5,11 @@ import { Timeline } from "./components/timeline";
 
 export default function HomePage() {
   return (
-    <main className="max-w-[600px] px-6 pt-10 mx-auto space-y-10">
+    <div className="space-y-10">
       <ProfileCard />
       <SkillSet />
       <Timeline />
       <Hobby />
-    </main>
+    </div>
   );
 }

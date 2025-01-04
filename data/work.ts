@@ -3,7 +3,7 @@ import { Work } from "@/types/work";
 export const works: Work[] = [
   {
     id: "my-site",
-    href: "https://21solclaro.me",
+    href: "https://solclarus.me",
     title: "My site",
     description: "This is my site",
   },

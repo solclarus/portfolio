@@ -5,7 +5,7 @@ import { format } from "date-fns";
 
 export const ArticleItem = ({ article }: { article: Article }) => {
   return (
-    <div className="hover:shadow-lg transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card hover:bg-card/10">
+    <div className="transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card hover:bg-accent">
       <h2 className="text-lg font-bold truncate">
         <Link href={`/article/${article.slug}`}>
           {article.title}

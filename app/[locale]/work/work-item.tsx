@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export const WorkItem = ({ work }: { work: Work }) => {
   return (
-    <div className="hover:shadow-lg transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card">
+    <div className="hover:bg-accent transition duration-500 relative p-4 border rounded-lg shadow-sm bg-card">
       <div className="aspect-video overflow-hidden relative border mb-2 rounded-md">
         <Image
           fill
