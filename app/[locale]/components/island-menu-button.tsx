@@ -24,7 +24,7 @@ export const IslandMenuButton = ({
       asChild
       className={cn(
         "rounded-full",
-        pathname === `/${locale}${href}` && "bg-muted"
+        pathname === `/${locale}${href}` && "bg-muted border"
       )}
       variant="ghost"
       size="icon"

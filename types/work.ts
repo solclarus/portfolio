@@ -1,4 +1,4 @@
-export type Portfolio = {
+export type Work = {
   id: string;
   href: string;
   title: string;

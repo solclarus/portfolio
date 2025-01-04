@@ -1,6 +1,6 @@
-import { Portfolio } from "@/types/portfolio";
+import { Work } from "@/types/work";
 
-export const portfolios: Portfolio[] = [
+export const works: Work[] = [
   {
     id: "my-site",
     href: "https://21solclaro.me",
