@@ -33,7 +33,7 @@ export const Profile = () => {
       <div className="flex space-x-3">
         {profiles.map((profile) => {
           return (
-            <Link href={profile.href} target="_blank">
+            <Link key={profile.id} href={profile.href} target="_blank">
               <Image
                 src={`/images/${profile.id}.svg`}
                 alt={profile.title}
