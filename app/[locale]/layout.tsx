@@ -33,8 +33,8 @@ export default async function LocaleLayout({
           disableTransitionOnChange
         >
           <NextIntlClientProvider messages={messages}>
-            <div className="min-h-dvh bg-muted/30">
-              <main className="mx-auto max-w-2xl mt-10 px-4">{children}</main>
+            <div className="min-h-dvh">
+              <main className="mx-auto max-w-2xl my-40 px-6">{children}</main>
               <IslandMenu />
               <Footer />
             </div>

@@ -6,7 +6,7 @@ export const Timeline = () => {
 
   return (
     <section>
-      <h2 className="font-bold text-xl pb-4 gradient-text">HISTORY</h2>
+      <h2 className="font-bold text-xl pb-4 text-gradient">HISTORY</h2>
       <ol>
         {keys.map((key) => (
           <li className="flex gap-x-3" key={key}>
