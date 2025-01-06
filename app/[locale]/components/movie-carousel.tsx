@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 import { ArrowLeft, ArrowRight } from "lucide-react";
@@ -14,12 +14,13 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import Image from "next/image";
+import { Favorite } from "./hobby";
 
 type MovieCarouselProps = {
   title?: string;
   link?: string;
   type: "movie" | "manga" | "music";
-  items: any[];
+  items: Favorite[];
 };
 
 export const MovieCarousel = ({

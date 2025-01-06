@@ -1,5 +1,10 @@
 import { MovieCarousel } from "./movie-carousel";
 
+export type Favorite = {
+  title: string;
+  image: string;
+};
+
 export const favorites = {
   movies: [
     {
