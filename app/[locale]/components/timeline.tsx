@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 export const Timeline = () => {
-  const t = useTranslations("home.experience");
+  const t = useTranslations("home.history");
   const keys = ["born", "highSchool", "university"];
 
   return (

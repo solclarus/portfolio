@@ -3,7 +3,16 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { IslandMenu } from "./components/island-menu";
 import { Footer } from "./components/footer";
+import { Metadata } from "next";
 import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "SOLCLARUS",
+  description: "This is solclarus's site.",
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 export default async function LocaleLayout({
   children,

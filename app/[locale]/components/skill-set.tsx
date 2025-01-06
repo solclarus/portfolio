@@ -1,5 +1,5 @@
-import Nextjs from "./logo/nextjs";
-import Supabase from "./logo/supabase";
+import Nextjs from "@/public/logo/nextjs";
+import Supabase from "@/public/logo/supabase";
 
 export const SkillSet = () => {
   return (

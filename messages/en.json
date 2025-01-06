@@ -1,6 +1,9 @@
 {
   "home": {
-    "experience": {
+    "profile": {
+      "greeting": "Hello, I'm <name>solclarus</name>. I'm a software engineer based in Tokyo. I was born and raised in Kobe."
+    },
+    "history": {
       "born": {
         "title": "Born in Kobe, Japan",
         "date": "December 2000",
@@ -17,8 +20,5 @@
         "content": "I am an Kwansei Gakuin University student from April 2020."
       }
     }
-  },
-  "top": {
-    "greeting": "Hello, world!"
   }
 }

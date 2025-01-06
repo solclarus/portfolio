@@ -1,6 +1,9 @@
 {
   "home": {
-    "experience": {
+    "profile": {
+      "greeting": "こんにちは <name>solclarus</name> です。東京でソフトウェアエンジニアをやっています。神戸出身です。"
+    },
+    "history": {
       "born": {
         "title": "兵庫県神戸市に生まれる",
         "date": "2000年 12月",
@@ -17,8 +20,5 @@
         "content": ""
       }
     }
-  },
-  "top": {
-    "greeting": "こんにちは、世界！"
   }
 }
