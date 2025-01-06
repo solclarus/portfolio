@@ -1,25 +1,48 @@
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
+import Link from "next/link";
 
 export const ProfileCard = () => {
-  const t = useTranslations("home.profile");
-
   return (
-    <div className="border flex flex-col rounded-xl relative p-8 lg:p-10 before:pointer-events-none before:absolute before:-inset-px before:rounded-xl before:bg-gradient-to-r before:from-white/5 before:via-transparent before:to-transparent bg-white/10 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,0.08),_0_2px_6px_rgba(0,0,0,0.12)] dark:bg-zinc-900/50 dark:shadow-[0_0_0_1px_rgba(255,255,255,0.05),_0_4px_8px_rgba(0,0,0,0.6)] dark:before:shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] text-muted-foreground text-center">
-      <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-        <Avatar className="size-16">
-          <AvatarImage
-            src={
-              "https://pbs.twimg.com/profile_images/1755179821687279616/84mo1RyV_400x400.jpg"
-            }
-            alt={"Yoh"}
+    <div className="flex flex-col space-y-3 justify-center items-center md:items-start w-full">
+      <Avatar className="size-28 rounded-full border">
+        <AvatarImage
+          src={
+            "https://pbs.twimg.com/profile_images/1755179821687279616/84mo1RyV_400x400.jpg"
+          }
+          alt={"SOLCLARUS"}
+        />
+        <AvatarFallback>SC</AvatarFallback>
+      </Avatar>
+      <div className="flex flex-col items-center md:items-start">
+        <h2 className="text-xl font-bold text-orange-500">solclarus</h2>
+        <p className="text-muted-foreground">Software Developer</p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero,
+          aliquam.
+        </p>
+      </div>
+      <div className="flex space-x-3">
+        <Link href={"x.com"}>
+          <Image
+            src={`/images/github.svg`}
+            alt={"github"}
+            width={20}
+            height={20}
           />
-          <AvatarFallback>YO</AvatarFallback>
-        </Avatar>
-        <div className="flex flex-col items-center md:items-start">
-          <h2 className="text-xl font-bold"> {t("name")}</h2>
-          <p className="text-muted-foreground"> {t("occupation")}</p>
-        </div>
+        </Link>
+        <Link href={"github.com"}>
+          <Image
+            src={`/images/instagram.svg`}
+            alt={"instagram"}
+            width={20}
+            height={20}
+          />
+        </Link>
+        <Link href={""}>
+          <Image src={`/images/x.svg`} alt={"x"} width={20} height={20} />
+        </Link>
       </div>
     </div>
   );

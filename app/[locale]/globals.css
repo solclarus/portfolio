@@ -76,4 +76,7 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  .gradient-text {
+    @apply bg-gradient-to-r from-foreground to-orange-500 inline-block text-transparent bg-clip-text;
+  }
 }

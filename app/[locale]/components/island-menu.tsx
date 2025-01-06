@@ -9,7 +9,7 @@ import { ScrollToTopButton } from "./scroll-to-top-button";
 export const IslandMenu = () => {
   return (
     <nav className="fixed flex gap-2 p-2 bottom-16 md:bottom-20 z-100 left-1/2 -translate-x-1/2 shadow-lg rounded-full bg-card/10 backdrop-blur border">
-      <IslandMenuButton href={"/"} icon={<Home />} />
+      <IslandMenuButton href={"/"} icon={<Home fill="orange" />} />
       <IslandMenuButton href={"/work"} icon={<Rocket />} />
       <IslandMenuButton href={"/article"} icon={<Book />} />
       <Suspense>
