@@ -2,19 +2,19 @@ import { works } from "@/data/work";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Page({
+export default async function Page({
   params,
 }: {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }) {
   const getWork = (id: string) =>
     works.find((work) => {
       return work.id === id;
     });
-
-  const work = getWork(params.id);
+  const { id } = await params;
+  const work = getWork(id);
 
   if (!work) return <div>no content</div>;
 

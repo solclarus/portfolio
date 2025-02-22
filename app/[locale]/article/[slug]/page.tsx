@@ -6,9 +6,9 @@ import type { Article } from "@/types/article";
 import { format } from "date-fns";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 export async function generateStaticParams() {
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = params;
+  const { slug } = await params;
   const article = await getArticleBySlug(slug);
 
   return {
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function Article({ params }: Props) {
-  const { slug } = params;
+  const { slug } = await params;
   const article = await getArticleBySlug(slug);
   if (!article) return;
 

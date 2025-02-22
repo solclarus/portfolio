@@ -5,12 +5,24 @@ const withNextIntl = createNextIntlPlugin();
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: [
-      "image.tmdb.org",
-      "media.themoviedb.org",
-      "raw.githubusercontent.com",
-      "dosbg3xlm0x1t.cloudfront.net",
-      "i.scdn.co",
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "image.tmdb.org",
+      },
+      {
+        protocol: "https",
+        hostname: "media.themoviedb.org",
+      },
+      {
+        protocol: "https",
+        hostname: "raw.githubusercontent.com",
+      },
+      {
+        protocol: "https",
+        hostname: "dosbg3xlm0x1t.cloudfront.net",
+      },
+      { protocol: "https", hostname: "i.scdn.co" },
     ],
   },
 };
